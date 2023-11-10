@@ -1,15 +1,15 @@
-General Information
+# General Information
 * Framework: Flask
 * Database: SQLite3
 * Purpose: To provide services for shortening URLs and managing them.
-Database Setup
+# Database Setup
 * Database Name: url_shortener.db
     * Tables:
         * urls: Stores the long URL, its corresponding short URL, and the user ID who created it.
         * Fields: id, long_url, short_url, user_id.
         * users: Stores user details.
         * Fields: user_id, tier.
-Functions
+# Functions
     * init_db()
     * Initializes the database by creating urls and users tables if they do not exist.
     * get_short_url(size=6, chars=string.ascii_letters + string.digits)
@@ -18,7 +18,7 @@ Functions
     * validate_url(url)
     * Validates the given URL using a regular expression.
     * Supports HTTP, HTTPS, FTP, localhost, and IP-based URLs.
-API Endpoints
+# API Endpoints
     * /shorten [POST]
     * Shortens a given URL.
     * Input: JSON with long_url and user_id.
@@ -39,10 +39,10 @@ API Endpoints
         * Responses:
         * Success: Redirects to the original URL.
         * Failure: Returns error message with a 404 HTTP status code if the URL is not found.
-Running the Application
+# Running the Application
 * The application is set to run in debug mode.
 * To start the server, execute the script, and it will listen for incoming HTTP requests.
-Additional Notes
+# Additional Notes
 * The API does not include authentication or advanced error handling.
 * Rate limiting is implemented based on user tiers, with different usage limits for each tier.
 * Database connections are handled within each endpoint function, opening and closing connections as needed.
